@@ -10,7 +10,7 @@ union number
 int main()
 {
 	char t;
-	int x, rev;
+	int x;
 
 	while (scanf("%d", &x) != EOF)
 	{

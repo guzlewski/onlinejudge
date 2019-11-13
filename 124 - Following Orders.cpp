@@ -44,7 +44,7 @@ Graph Graph::Clone()
 {
 	Graph g;
 
-	for (int i = 0; i < nodes.size(); i++)
+	for (unsigned int i = 0; i < nodes.size(); i++)
 	{
 		Node n;
 		n.used = nodes[i].used;
@@ -52,12 +52,12 @@ Graph Graph::Clone()
 		g.nodes.push_back(n);
 	}
 
-	for (int i = 0; i < nodes.size(); i++)
+	for (unsigned int i = 0; i < nodes.size(); i++)
 	{
-		for (int j = 0; j < nodes[i].children.size(); j++)
+		for (unsigned int j = 0; j < nodes[i].children.size(); j++)
 			g.nodes[i].children.push_back(&g.nodes[FindInNodes(nodes[i].children[j]->value)]);
 
-		for (int j = 0; j < nodes[i].parents.size(); j++)
+		for (unsigned int j = 0; j < nodes[i].parents.size(); j++)
 			g.nodes[i].parents.push_back(&g.nodes[FindInNodes(nodes[i].parents[j]->value)]);
 	}
 
@@ -82,7 +82,7 @@ void Graph::SolveRecursively(string order)
 	}
 	else
 	{
-		for (int j = 0; j < parentless.size(); j++)
+		for (unsigned int j = 0; j < parentless.size(); j++)
 		{
 			char value = parentless[j]->value;
 			Graph g = Clone();
@@ -97,7 +97,7 @@ void Graph::SolveRecursively(string order)
 
 int Graph::FindInNodes(char x)
 {
-	for (int i = 0; i < nodes.size(); i++)
+	for (unsigned int i = 0; i < nodes.size(); i++)
 		if (nodes[i].value == x) return i;
 
 	return -1;
@@ -105,7 +105,7 @@ int Graph::FindInNodes(char x)
 
 int Graph::FindInVector(vector<Node*>& n, char x)
 {
-	for (int i = 0; i < n.size(); i++)
+	for (unsigned int i = 0; i < n.size(); i++)
 		if (n[i]->value == x) return i;
 
 	return -1;
@@ -122,7 +122,7 @@ void Graph::AddEdge(char a, char b)
 
 bool Graph::IsParentless(vector<Node*>& parents)
 {
-	for (int i = 0; i < parents.size(); i++)
+	for (unsigned int i = 0; i < parents.size(); i++)
 		if (parents[i]->used == false) return false;
 
 	return true;
@@ -131,7 +131,7 @@ bool Graph::IsParentless(vector<Node*>& parents)
 void Graph::ReloadParentless()
 {
 	parentless.clear();
-	for (int i = 0; i < nodes.size(); i++)
+	for (unsigned int i = 0; i < nodes.size(); i++)
 		if (nodes[i].used == false && IsParentless(nodes[i].parents))
 			parentless.push_back(&nodes[i]);
 

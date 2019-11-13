@@ -11,7 +11,6 @@ int main()
 
 	while (tests--)
 	{
-		double a, b, c;
 		scanf("%lf %lf", &x1, &x2);
 
 		x1 /= 2;

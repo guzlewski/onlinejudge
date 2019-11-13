@@ -6,7 +6,7 @@ using namespace std;
 int CalculateDifference(string input, string _template)
 {
 	int count = 0;
-	for (int i = 0; i < input.size(); i++)
+	for (unsigned int i = 0; i < input.size(); i++)
 		if (input[i] != _template[i])
 			count++;
 
@@ -34,7 +34,7 @@ int main()
 			words[CalculateDifference(x, words[0])] = x;
 		}
 
-		for (int i = 0; i < words.size(); i++)
+		for (unsigned int i = 0; i < words.size(); i++)
 			cout << words[i] << endl;
 	}
 
