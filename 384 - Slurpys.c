@@ -34,7 +34,7 @@ int FindSlimp(char* tab, int index)
 		{
 			end = i + 1;
 
-			return i + 1;
+			return end;
 		}
 		else if (i + 1 < dl && tab[i + 1] == 'B')
 		{

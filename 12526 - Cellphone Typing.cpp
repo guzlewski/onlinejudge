@@ -14,7 +14,7 @@ public:
 
 int Node::FindChild(char value)
 {
-	for (int i = 0; i < children.size(); i++)
+	for (unsigned int i = 0; i < children.size(); i++)
 		if (children[i].value == value) return i;
 
 	return -1;
@@ -28,7 +28,7 @@ public:
 
 private:
 	Node root;
-	void AddRecursively(Node& node, string word, int index);
+	void AddRecursively(Node& node, string word, unsigned int index);
 	int SolveRecursively(Node& node, int count);
 };
 
@@ -43,7 +43,7 @@ int Trie::Solve()
 	else return SolveRecursively(root, 0);
 }
 
-void Trie::AddRecursively(Node& node, string word, int index)
+void Trie::AddRecursively(Node& node, string word, unsigned int index)
 {
 	if (index > word.size()) return;
 
@@ -73,7 +73,7 @@ int Trie::SolveRecursively(Node& node, int count)
 	else
 	{
 		int partialsum = 0;
-		for (int i = 0; i < node.children.size(); i++)
+		for (unsigned int i = 0; i < node.children.size(); i++)
 		{
 			if (node.children[i].value != '\0') partialsum += SolveRecursively(node.children[i], count + 1);
 			else partialsum += SolveRecursively(node.children[i], count);

@@ -49,7 +49,7 @@ int String2Int(char* tab)
 	int len = strlen(tab), i, j, sum = 0;
 
 	for (i = len - 1, j = 0; i >= 0; i--, j++)
-		sum += (int)pow(16, j) * Char2Int(tab[i]);
+		sum += pow(16, j) * Char2Int(tab[i]);
 
 	return sum;
 }
@@ -71,9 +71,9 @@ int main()
 	while (tests--)
 	{
 		char l1[4], l2[4], sign;
-		scanf("%s %c %s", &l1, &sign, &l2);
+		scanf("%s %c %s", l1, &sign, l2);
 
-		int first = String2Int(l1), second = String2Int(l2), sum, i;
+		int first = String2Int(l1), second = String2Int(l2), sum;
 
 		if (sign == '+')
 			sum = first + second;

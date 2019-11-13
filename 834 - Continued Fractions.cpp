@@ -190,7 +190,7 @@ int main()
 
 		cout << "[" << numbers[0] << ";";
 
-		for (int i = 1; i < numbers.size(); i++)
+		for (unsigned int i = 1; i < numbers.size(); i++)
 		{
 			cout << numbers[i];
 

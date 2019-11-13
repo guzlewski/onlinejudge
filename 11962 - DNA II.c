@@ -33,8 +33,7 @@ int main()
 		number = 0;
 		p = 0;
 
-		i = (int)strlen(tab) - 1;
-		for (i; i >= 0; i--)
+		for (i = (int)strlen(tab) - 1; i >= 0; i--)
 		{
 			if (tab[i] == 'C')
 				number = number + power(4, p);

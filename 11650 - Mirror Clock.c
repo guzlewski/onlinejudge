@@ -37,7 +37,7 @@ int main()
 
 		if (minute < 0) minute += 60;
 
-		printf("%0.2d:%0.2d\n", hour, minute);
+		printf("%.2d:%.2d\n", hour, minute);
 	}
 
 	return 0;

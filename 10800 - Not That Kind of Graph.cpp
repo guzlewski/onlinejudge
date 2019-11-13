@@ -19,7 +19,7 @@ int main()
 				tab[i][j] = ' ';
 
 		int index = 55;
-		for (int i = 0; i < data.length(); i++)
+		for (unsigned int i = 0; i < data.length(); i++)
 		{
 			if (data[i] == 'R')
 			{
@@ -28,7 +28,7 @@ int main()
 			}
 			else if (data[i] == 'F')
 			{
-				if (i > 0 && data[i - 1] == 'F' || data[i - 1] == 'C') index++;
+				if (i > 0 && (data[i - 1] == 'F' || data[i - 1] == 'C')) index++;
 				tab[index][i] = '\\';
 			}
 			else
@@ -63,7 +63,7 @@ int main()
 		}
 
 		cout << '+';
-		for (int i = 0; i < data.length() + 2; i++)
+		for (unsigned int i = 0; i < data.length() + 2; i++)
 			cout << '-';
 		cout << endl;
 
