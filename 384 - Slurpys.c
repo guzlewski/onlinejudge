@@ -71,7 +71,7 @@ int IsSlurpy(char* tab)
 	if (x <= 0)
 		return 0;
 
-	return (x + 1) == strlen(tab);
+	return (x + 1) == (int)strlen(tab);
 }
 
 int main()
