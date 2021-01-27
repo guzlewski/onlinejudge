@@ -2,44 +2,50 @@
 
 using namespace std;
 
-int main() {
-	int numbers = 0, caseN = 0, input[1000] = { 0 };
+int c[21];
+int good[21];
+int tab[21][21];
 
-	int x;
-	while (cin >> x)
+int lcs(int i, int j)
+{
+	if (i == 0 || j == 0) return 0;
+	if (tab[i][j] != -1) return tab[i][j];
+	if (good[i] == c[j])
 	{
-		if (x < 0) break;
-		input[0] = x;
-		numbers = 1;
-
-		while (cin >> x)
-		{
-			input[numbers] = x;
-			if (x < 0) break;
-			numbers++;
-		}
-
-		int m[1000] = { 0 };
-		for (int i = 0; i < numbers; i++)
-		{
-			for (int j = i + 1; j < numbers; j++)
-			{
-				if (m[j] < m[i] + 1 && input[j] < input[i])
-					m[j] = m[i] + 1;
-			}
-		}
-
-		int out = 0;
-		for (int i = 0; i < numbers; i++)
-		{
-			if (out < m[i])
-				out = m[i];
-		}
-		out++;
-
-		if (caseN) cout << endl;
-		cout << "Test #" << ++caseN << ":" << endl;
-		cout << "  maximum possible interceptions: " << out << endl;
+		tab[i][j] = 1 + lcs(i - 1, j - 1);
+		return tab[i][j];
 	}
+
+	tab[i][j] = max(lcs(i - 1, j), lcs(i, j - 1));
+	return tab[i][j];
+}
+
+int main()
+{
+	int n, temp;
+	cin >> n;
+
+	for (int i = 1; i <= n; i++)
+	{
+		cin >> temp;
+		good[temp] = i;
+	}
+
+	while (cin >> temp)
+	{
+		c[temp] = 1;
+		for (int i = 2; i <= n; i++)
+		{
+			cin >> temp;
+			c[temp] = i;
+		}
+
+		for (int i = 0; i < 21; i++)
+			for (int j = 0; j < 21; j++)
+				tab[i][j] = -1;
+
+		cout << lcs(n, n) << endl;
+	}
+
 	return 0;
 }
