@@ -8,7 +8,8 @@ int main()
 	while (1)
 	{
 		scanf("%d %d", &n, &a);
-		if (n == 0) break;
+		if (n == 0)
+			break;
 
 		int inside, outside;
 		inside = 0;
@@ -21,12 +22,18 @@ int main()
 
 			int counter = 0;
 
-			if (sqrt((0 - x) * (0 - x) + (0 - y) * (0 - y)) < a) counter++;
-			if (sqrt((0 - x) * (0 - x) + (a - y) * (a - y)) < a) counter++;
-			if (sqrt((a - x) * (a - x) + (0 - y) * (0 - y)) < a) counter++;
-			if (sqrt((a - x) * (a - x) + (a - y) * (a - y)) < a) counter++;
-			if (counter == 4) inside++;
-			else outside++;
+			if (sqrt((0 - x) * (0 - x) + (0 - y) * (0 - y)) < a)
+				counter++;
+			if (sqrt((0 - x) * (0 - x) + (a - y) * (a - y)) < a)
+				counter++;
+			if (sqrt((a - x) * (a - x) + (0 - y) * (0 - y)) < a)
+				counter++;
+			if (sqrt((a - x) * (a - x) + (a - y) * (a - y)) < a)
+				counter++;
+			if (counter == 4)
+				inside++;
+			else
+				outside++;
 		}
 		double r;
 		r = ((double)inside * a * a) / ((double)n);

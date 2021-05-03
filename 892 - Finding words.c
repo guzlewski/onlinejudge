@@ -16,7 +16,8 @@ int main()
 	while (1)
 	{
 		fgets(tab, 62, stdin);
-		if (strlen(tab) == 2 && tab[0] == '#') break;
+		if (strlen(tab) == 2 && tab[0] == '#')
+			break;
 
 		if (!ignore)
 		{
@@ -51,7 +52,8 @@ int main()
 
 				printf("%c", tab[i]);
 
-				for (j = 0; j < 62; j++) word[j] = -1;
+				for (j = 0; j < 62; j++)
+					word[j] = -1;
 				index = 0;
 			}
 			else if (tab[i] == '-' && i + 1 < len && isspace(tab[i + 1]))

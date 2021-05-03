@@ -40,7 +40,8 @@ int main()
 	while (true)
 	{
 		cin >> population >> commnands;
-		if (population == 0 && commnands == 0) break;
+		if (population == 0 && commnands == 0)
+			break;
 
 		cout << "Case " << ++caseN << ":" << endl;
 
@@ -56,7 +57,8 @@ int main()
 				cin >> inx;
 				em.Emegency(inx);
 			}
-			else cout << em.Next() << endl;
+			else
+				cout << em.Next() << endl;
 		}
 	}
 

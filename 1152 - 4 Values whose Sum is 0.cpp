@@ -17,10 +17,10 @@ int main()
 
 		memset(partialsum, 0, sizeof(partialsum));
 
-		int* a = new int[n];
-		int* b = new int[n];
-		int* c = new int[n];
-		int* d = new int[n];
+		int *a = new int[n];
+		int *b = new int[n];
+		int *c = new int[n];
+		int *d = new int[n];
 
 		for (int i = 0; i < n; i++)
 		{

@@ -14,18 +14,18 @@ public:
 	void SwapRow(int a, int b);
 	void SwapCol(int a, int b);
 
-	friend ostream& operator<<(ostream& output, Matrix& r);
-	friend istream& operator>>(istream& input, Matrix& m);
+	friend ostream &operator<<(ostream &output, Matrix &r);
+	friend istream &operator>>(istream &input, Matrix &m);
 
 private:
 	int n;
-	int** tab;
+	int **tab;
 };
 
 Matrix::Matrix(int n)
 {
 	this->n = n;
-	tab = new int* [n];
+	tab = new int *[n];
 
 	for (int i = 0; i < n; ++i)
 		tab[i] = new int[n];
@@ -52,7 +52,8 @@ void Matrix::Decrement()
 		for (int j = 0; j < n; j++)
 		{
 			tab[i][j] = (tab[i][j] - 1) % 10;
-			if (tab[i][j] < 0) tab[i][j] += 10;
+			if (tab[i][j] < 0)
+				tab[i][j] += 10;
 		}
 }
 
@@ -97,7 +98,7 @@ void Matrix::SwapCol(int a, int b)
 	}
 }
 
-ostream& operator<<(ostream& output, Matrix& m)
+ostream &operator<<(ostream &output, Matrix &m)
 {
 	for (int i = 0; i < m.n; i++)
 	{
@@ -110,7 +111,7 @@ ostream& operator<<(ostream& output, Matrix& m)
 	return output;
 }
 
-istream& operator>>(istream& input, Matrix& m)
+istream &operator>>(istream &input, Matrix &m)
 {
 	char c;
 	for (int i = 0; i < m.n; i++)
@@ -161,7 +162,8 @@ int main()
 				tab.Transpose();
 		}
 
-		cout << "Case #" << ++casenr << endl << tab << endl;
+		cout << "Case #" << ++casenr << endl
+			 << tab << endl;
 	}
 
 	return 0;

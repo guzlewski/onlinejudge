@@ -15,7 +15,8 @@ public:
 int Node::FindChild(char value)
 {
 	for (unsigned int i = 0; i < children.size(); i++)
-		if (children[i].value == value) return i;
+		if (children[i].value == value)
+			return i;
 
 	return -1;
 }
@@ -28,8 +29,8 @@ public:
 
 private:
 	Node root;
-	void AddRecursively(Node& node, string word, unsigned int index);
-	int SolveRecursively(Node& node, int count);
+	void AddRecursively(Node &node, string word, unsigned int index);
+	int SolveRecursively(Node &node, int count);
 };
 
 void Trie::Add(string word)
@@ -39,17 +40,22 @@ void Trie::Add(string word)
 
 int Trie::Solve()
 {
-	if (root.children.size() < 2) return SolveRecursively(root, 1);
-	else return SolveRecursively(root, 0);
+	if (root.children.size() < 2)
+		return SolveRecursively(root, 1);
+	else
+		return SolveRecursively(root, 0);
 }
 
-void Trie::AddRecursively(Node& node, string word, unsigned int index)
+void Trie::AddRecursively(Node &node, string word, unsigned int index)
 {
-	if (index > word.size()) return;
+	if (index > word.size())
+		return;
 
 	char value;
-	if (index == word.size()) value = '\0';
-	else value = word[index];
+	if (index == word.size())
+		value = '\0';
+	else
+		value = word[index];
 
 	int next = node.FindChild(value);
 
@@ -66,17 +72,21 @@ void Trie::AddRecursively(Node& node, string word, unsigned int index)
 	AddRecursively(node.children[node.children.size() - 1], word, index + 1);
 }
 
-int Trie::SolveRecursively(Node& node, int count)
+int Trie::SolveRecursively(Node &node, int count)
 {
-	if (node.children.size() == 0) return count;
-	else if (node.children.size() == 1) return SolveRecursively(node.children[0], count);
+	if (node.children.size() == 0)
+		return count;
+	else if (node.children.size() == 1)
+		return SolveRecursively(node.children[0], count);
 	else
 	{
 		int partialsum = 0;
 		for (unsigned int i = 0; i < node.children.size(); i++)
 		{
-			if (node.children[i].value != '\0') partialsum += SolveRecursively(node.children[i], count + 1);
-			else partialsum += SolveRecursively(node.children[i], count);
+			if (node.children[i].value != '\0')
+				partialsum += SolveRecursively(node.children[i], count + 1);
+			else
+				partialsum += SolveRecursively(node.children[i], count);
 		}
 
 		return partialsum;

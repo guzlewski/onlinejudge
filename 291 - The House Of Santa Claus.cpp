@@ -5,7 +5,7 @@
 struct node
 {
 	int value;
-	std::vector<node*> connected;
+	std::vector<node *> connected;
 };
 
 void init(node nodes[6])
@@ -37,7 +37,7 @@ void init(node nodes[6])
 	nodes[4].connected.push_back(&nodes[3]);
 }
 
-bool isline(int x, int y, std::vector<node*>& nodes)
+bool isline(int x, int y, std::vector<node *> &nodes)
 {
 	if (x == y || nodes.size() < 2)
 	{
@@ -60,15 +60,15 @@ int main()
 	node nodes[6];
 	init(nodes);
 
-	std::queue<std::vector<node*>> pending;
-	pending.push(std::vector<node*>{&nodes[0]});
+	std::queue<std::vector<node *>> pending;
+	pending.push(std::vector<node *>{&nodes[0]});
 
 	while (!pending.empty())
 	{
 		auto current = pending.front();
 		pending.pop();
 
-		for (auto& child : current.back()->connected)
+		for (auto &child : current.back()->connected)
 		{
 			if (!isline(child->value, current.back()->value, current))
 			{
@@ -80,7 +80,7 @@ int main()
 
 		if (current.size() == 9)
 		{
-			for (auto& node : current)
+			for (auto &node : current)
 			{
 				std::cout << node->value + 1;
 			}

@@ -16,10 +16,12 @@ int main()
 		scanf("%d %d %d", &f.a, &f.b, &f.c);
 		scanf("%d %d %d", &g.a, &g.b, &g.c);
 
-		if (f.a == 0 && f.b == 0 && f.c == 0 && g.a == 0 && g.b == 0 && g.c == 0) break;
+		if (f.a == 0 && f.b == 0 && f.c == 0 && g.a == 0 && g.b == 0 && g.c == 0)
+			break;
 
 		int det = f.a * g.b - g.a * f.b;
-		if (det == 0) printf("No fixed point exists.\n");
+		if (det == 0)
+			printf("No fixed point exists.\n");
 		else
 		{
 			float x, y;

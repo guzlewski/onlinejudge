@@ -10,7 +10,7 @@ int main()
 		int p, d;
 		std::cin >> p >> d;
 
-		int* tab = new int[p * p];
+		int *tab = new int[p * p];
 
 		for (int i = 0; i < p; i++)
 		{

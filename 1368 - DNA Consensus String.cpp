@@ -3,7 +3,7 @@
 #include <map>
 #include <utility>
 
-std::pair<char, int> findnearest(std::vector<std::string>& input, int index)
+std::pair<char, int> findnearest(std::vector<std::string> &input, int index)
 {
 	char c;
 	int max = 0;
@@ -14,7 +14,7 @@ std::pair<char, int> findnearest(std::vector<std::string>& input, int index)
 		codes[input[i][index]]++;
 	}
 
-	for (const auto& it : codes)
+	for (const auto &it : codes)
 	{
 		if (it.second > max)
 		{
@@ -55,6 +55,7 @@ int main()
 			error += n.second;
 		}
 
-		std::cout << dna << std::endl << error << std::endl;
+		std::cout << dna << std::endl
+				  << error << std::endl;
 	}
 }

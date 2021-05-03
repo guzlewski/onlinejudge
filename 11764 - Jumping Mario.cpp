@@ -18,11 +18,14 @@ int main()
 		{
 			cin >> temp;
 
-			if (prev == -1) prev = temp;
+			if (prev == -1)
+				prev = temp;
 			else
 			{
-				if (temp > prev) high++;
-				else if (temp < prev) low++;
+				if (temp > prev)
+					high++;
+				else if (temp < prev)
+					low++;
 				prev = temp;
 			}
 		}

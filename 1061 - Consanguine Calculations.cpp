@@ -44,7 +44,7 @@ std::vector<std::string> calculateChild(std::string p1, std::string p2)
 
 	if (p1[p1.length() - 1] == '-' && p2[p2.length() - 1] == '-')
 	{
-		for (auto& x : results)
+		for (auto &x : results)
 		{
 			x += '-';
 		}
@@ -53,7 +53,7 @@ std::vector<std::string> calculateChild(std::string p1, std::string p2)
 	{
 		std::vector<std::string> temp;
 
-		for (auto& x : results)
+		for (auto &x : results)
 		{
 			temp.push_back(x + "+");
 			temp.push_back(x + "-");
@@ -68,9 +68,9 @@ std::vector<std::string> calculateChild(std::string p1, std::string p2)
 std::vector<std::string> calculateParent(std::string p1, std::string child)
 {
 	std::vector<std::string> results;
-	std::string tab[] = { "A+", "A-", "AB+", "AB-", "B+", "B-", "O+", "O-" };
+	std::string tab[] = {"A+", "A-", "AB+", "AB-", "B+", "B-", "O+", "O-"};
 
-	for (auto& x : tab)
+	for (auto &x : tab)
 	{
 		auto temp = calculateChild(p1, x);
 

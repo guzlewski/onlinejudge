@@ -9,7 +9,8 @@ struct Point
 
 int Compare(struct Point x, struct Point y)
 {
-	if (x.x == y.x && x.y == y.y) return 1;
+	if (x.x == y.x && x.y == y.y)
+		return 1;
 	return 0;
 }
 

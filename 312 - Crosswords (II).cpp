@@ -25,10 +25,10 @@ struct node
 		column = _column;
 	};
 
-	~node() {};
+	~node(){};
 };
 
-void floodFill(int i, int j, int m, int n, int* tab)
+void floodFill(int i, int j, int m, int n, int *tab)
 {
 	std::queue<node> toProcess, processed;
 	toProcess.push(node(i, j));
@@ -94,9 +94,9 @@ int main()
 
 	while (std::cin >> m >> n && n != 0 && m != 0)
 	{
-		int* tab = new int[m * n];
+		int *tab = new int[m * n];
 		int height = 3 * m + 1, width = 5 * n + 1;
-		char* output = new char[width * height];
+		char *output = new char[width * height];
 
 		memset(output, (int)' ', width * height * sizeof(char));
 
@@ -140,7 +140,6 @@ int main()
 				}
 			}
 		}
-
 
 		int index = 0;
 

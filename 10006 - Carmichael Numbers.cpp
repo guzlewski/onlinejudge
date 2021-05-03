@@ -5,12 +5,13 @@ using namespace std;
 int main()
 {
 	int number;
-	int carmichaelNumbers[16] = { 561, 1105, 1729, 2465, 2821, 6601, 8911, 10585, 15841, 29341, 41041, 46657, 52633, 62745, 63973 };
+	int carmichaelNumbers[16] = {561, 1105, 1729, 2465, 2821, 6601, 8911, 10585, 15841, 29341, 41041, 46657, 52633, 62745, 63973};
 
 	do
 	{
 		cin >> number;
-		if (number == 0) return 0;
+		if (number == 0)
+			return 0;
 
 		bool flag = false;
 
@@ -23,8 +24,10 @@ int main()
 			}
 		}
 
-		if (flag) cout << "The number " << number << " is a Carmichael number." << endl;
-		else cout << number << " is normal." << endl;
+		if (flag)
+			cout << "The number " << number << " is a Carmichael number." << endl;
+		else
+			cout << number << " is normal." << endl;
 	} while (number != 0);
 
 	return 0;

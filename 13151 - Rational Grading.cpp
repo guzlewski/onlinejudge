@@ -15,11 +15,11 @@ int main()
 		if (s == "0" && m == 0)
 			break;
 
-		if (s[0] == '0' && s[1] == 'x') 
+		if (s[0] == '0' && s[1] == 'x')
 			sscanf(s.c_str(), "%X", &n);
-		else if (s[0] == '0') 
+		else if (s[0] == '0')
 			sscanf(s.c_str(), "%o", &n);
-		else 
+		else
 			sscanf(s.c_str(), "%d", &n);
 
 		int ret = 0, val;
@@ -30,25 +30,25 @@ int main()
 
 			if (!strcmp(cmd.c_str(), "i"))
 			{
-				if (val != n) 
+				if (val != n)
 					n = val;
-				else 
+				else
 					ret++;
 			}
 			else if (!strcmp(cmd.c_str(), "i++"))
 			{
-				if (val != n) 
+				if (val != n)
 					n = val;
-				else 
+				else
 					ret++;
 
 				n++;
 			}
 			else if (!strcmp(cmd.c_str(), "i--"))
 			{
-				if (val != n) 
+				if (val != n)
 					n = val;
-				else 
+				else
 					ret++;
 
 				n--;
@@ -57,18 +57,18 @@ int main()
 			{
 				++n;
 
-				if (val != n) 
+				if (val != n)
 					n = val;
-				else 
+				else
 					ret++;
 			}
 			else if (!strcmp(cmd.c_str(), "--i"))
 			{
 				--n;
 
-				if (val != n) 
+				if (val != n)
 					n = val;
-				else 
+				else
 					ret++;
 			}
 		}

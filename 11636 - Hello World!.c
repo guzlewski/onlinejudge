@@ -8,7 +8,8 @@ int main()
 	while (1)
 	{
 		scanf("%d", &x);
-		if (x < 0) break;
+		if (x < 0)
+			break;
 
 		if (x == 1)
 		{

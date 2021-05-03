@@ -9,7 +9,8 @@ int main()
 	while (true)
 	{
 		cin >> coconuts;
-		if (coconuts < 0) break;
+		if (coconuts < 0)
+			break;
 
 		if (coconuts < 2)
 		{
@@ -20,12 +21,14 @@ int main()
 		{
 			bool done = false;
 			int start = coconuts - 1;
-			if (start > 20) start = 20;
+			if (start > 20)
+				start = 20;
 
 			for (int people = start; people > 1; people--)
 			{
 				int temp = coconuts;
-				if (temp % people > 1) continue;
+				if (temp % people > 1)
+					continue;
 
 				bool ok = true;
 				for (int i = 0; i < people; i++)
@@ -39,7 +42,8 @@ int main()
 
 					temp = temp - (temp / people);
 				}
-				if (temp % people != 0) ok = false;
+				if (temp % people != 0)
+					ok = false;
 
 				if (ok)
 				{
@@ -49,7 +53,8 @@ int main()
 				}
 			}
 
-			if (!done)cout << coconuts << " coconuts, no solution" << endl;
+			if (!done)
+				cout << coconuts << " coconuts, no solution" << endl;
 		}
 	}
 

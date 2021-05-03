@@ -18,7 +18,7 @@ int main()
 			break;
 		}
 
-		int* connections = new int[p * p];
+		int *connections = new int[p * p];
 
 		for (int i = 0; i < p; i++)
 		{
@@ -95,7 +95,8 @@ int main()
 			std::cout << "DISCONNECTED";
 		}
 
-		std::cout << std::endl << std::endl;
+		std::cout << std::endl
+				  << std::endl;
 
 		delete[] connections;
 	}

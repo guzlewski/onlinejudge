@@ -17,7 +17,8 @@ int main()
 
 		while (x != 0)
 		{
-			if (x & 1) j++;
+			if (x & 1)
+				j++;
 			x >>= 1;
 		}
 

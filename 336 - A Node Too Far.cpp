@@ -39,7 +39,7 @@ int main()
 					pending.pop();
 					visited[current] = true;
 
-					for (auto& x : nodes[current])
+					for (auto &x : nodes[current])
 					{
 						if (!visited[x])
 						{

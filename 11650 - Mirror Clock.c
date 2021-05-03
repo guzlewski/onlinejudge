@@ -22,7 +22,8 @@ int main()
 				hour++;
 				time = time - 60;
 			}
-			if (hour == 0) hour = 12;
+			if (hour == 0)
+				hour = 12;
 		}
 		else
 		{
@@ -32,10 +33,12 @@ int main()
 				hour--;
 				time = time + 60;
 			}
-			if (minute != 0) hour++;
+			if (minute != 0)
+				hour++;
 		}
 
-		if (minute < 0) minute += 60;
+		if (minute < 0)
+			minute += 60;
 
 		printf("%.2d:%.2d\n", hour, minute);
 	}

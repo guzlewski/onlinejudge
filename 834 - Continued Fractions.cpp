@@ -7,22 +7,22 @@ class Rational
 public:
 	Rational();
 	Rational(int numerator, int denominator = 1);
-	Rational(const Rational& r);
+	Rational(const Rational &r);
 
-	Rational operator+(Rational& r);
-	Rational operator-(Rational& r);
-	Rational operator*(Rational& r);
-	Rational operator/(Rational& r);
+	Rational operator+(Rational &r);
+	Rational operator-(Rational &r);
+	Rational operator*(Rational &r);
+	Rational operator/(Rational &r);
 
-	friend bool operator==(Rational& r1, Rational& r2);
-	friend bool operator!=(Rational& r1, Rational& r2);
-	friend bool operator<(Rational& r1, Rational& r2);
-	friend bool operator>(Rational& r1, Rational& r2);
-	friend bool operator<=(Rational& r1, Rational& r2);
-	friend bool operator>=(Rational& r1, Rational& r2);
+	friend bool operator==(Rational &r1, Rational &r2);
+	friend bool operator!=(Rational &r1, Rational &r2);
+	friend bool operator<(Rational &r1, Rational &r2);
+	friend bool operator>(Rational &r1, Rational &r2);
+	friend bool operator<=(Rational &r1, Rational &r2);
+	friend bool operator>=(Rational &r1, Rational &r2);
 
-	friend ostream& operator<<(ostream& output, Rational& r);
-	friend istream& operator>>(istream& input, Rational& r);
+	friend ostream &operator<<(ostream &output, Rational &r);
+	friend istream &operator>>(istream &input, Rational &r);
 
 	void shorten();
 
@@ -36,32 +36,35 @@ private:
 	static int gcd(int x, int y);
 };
 
-Rational::Rational() {
+Rational::Rational()
+{
 	numerator = 0;
 	denominator = 1;
 }
 
-Rational::Rational(const Rational& r) {
+Rational::Rational(const Rational &r)
+{
 	this->numerator = r.numerator;
 	this->denominator = r.denominator;
 }
 
-Rational::Rational(int numerator, int denominator) {
+Rational::Rational(int numerator, int denominator)
+{
 	this->numerator = numerator;
 	this->denominator = denominator;
 
 	shorten();
 }
 
-Rational Rational::operator+(Rational& r)
+Rational Rational::operator+(Rational &r)
 {
 	int nww = (this->denominator * r.denominator) / gcd(this->denominator, r.denominator);
 	int w1 = nww / this->denominator, w2 = nww / r.denominator;
 
-	return  Rational(w1 * this->numerator + w2 * r.numerator, nww);
+	return Rational(w1 * this->numerator + w2 * r.numerator, nww);
 }
 
-Rational Rational::operator-(Rational& r)
+Rational Rational::operator-(Rational &r)
 {
 	int nww = (this->denominator * r.denominator) / gcd(this->denominator, r.denominator);
 	int w1 = nww / this->denominator, w2 = nww / r.denominator;
@@ -69,14 +72,14 @@ Rational Rational::operator-(Rational& r)
 	return Rational(w1 * this->numerator - w2 * r.numerator, nww);
 }
 
-Rational Rational::operator*(Rational& r)
+Rational Rational::operator*(Rational &r)
 {
 	return Rational(this->numerator * r.numerator, this->denominator * r.denominator);
 }
 
-Rational Rational::operator/(Rational& r)
+Rational Rational::operator/(Rational &r)
 {
-	return  Rational(this->numerator * r.denominator, this->denominator * r.numerator);
+	return Rational(this->numerator * r.denominator, this->denominator * r.numerator);
 }
 
 inline int Rational::getnumerator()
@@ -89,8 +92,10 @@ inline int Rational::getdenominator()
 	return this->denominator;
 }
 
-int Rational::gcd(int x, int y) {
-	while (y != 0) {
+int Rational::gcd(int x, int y)
+{
+	while (y != 0)
+	{
 		int r = x % y;
 		x = y;
 		y = r;
@@ -99,7 +104,8 @@ int Rational::gcd(int x, int y) {
 	return x;
 }
 
-void Rational::shorten() {
+void Rational::shorten()
+{
 	int _gcd = gcd(this->numerator, this->denominator);
 
 	this->numerator /= _gcd;
@@ -112,45 +118,54 @@ void Rational::shorten() {
 	}
 }
 
-bool operator==(Rational& r1, Rational& r2)
+bool operator==(Rational &r1, Rational &r2)
 {
 	return (r1.denominator == r2.denominator) && (r1.numerator == r2.numerator);
 }
 
-bool operator!=(Rational& r1, Rational& r2)
+bool operator!=(Rational &r1, Rational &r2)
 {
 	return (r1.denominator != r2.denominator) || (r1.numerator != r2.numerator);
 }
 
-bool operator>(Rational& r1, Rational& r2)
+bool operator>(Rational &r1, Rational &r2)
 {
 	Rational x = r1 - r2;
-	if (((double)x.getnumerator() / (double)x.getdenominator()) > 0) return true;
-	else return false;
+	if (((double)x.getnumerator() / (double)x.getdenominator()) > 0)
+		return true;
+	else
+		return false;
 }
 
-bool operator<(Rational& r1, Rational& r2)
+bool operator<(Rational &r1, Rational &r2)
 {
 	Rational x = r1 - r2;
-	if (((double)x.getnumerator() / (double)x.getdenominator()) < 0) return true;
-	else return false;
+	if (((double)x.getnumerator() / (double)x.getdenominator()) < 0)
+		return true;
+	else
+		return false;
 }
 
-bool operator>=(Rational& r1, Rational& r2)
+bool operator>=(Rational &r1, Rational &r2)
 {
 	Rational x = r1 - r2;
-	if (((double)x.getnumerator() / (double)x.getdenominator()) >= 0) return true;
-	else return false;
+	if (((double)x.getnumerator() / (double)x.getdenominator()) >= 0)
+		return true;
+	else
+		return false;
 }
 
-bool operator<=(Rational& r1, Rational& r2)
+bool operator<=(Rational &r1, Rational &r2)
 {
 	Rational x = r1 - r2;
-	if (((double)x.getnumerator() / (double)x.getdenominator()) <= 0) return true;
-	else return false;
+	if (((double)x.getnumerator() / (double)x.getdenominator()) <= 0)
+		return true;
+	else
+		return false;
 }
 
-ostream& operator<<(ostream& output, Rational& r) {
+ostream &operator<<(ostream &output, Rational &r)
+{
 	output << r.numerator;
 
 	if (r.denominator != 1)
@@ -159,7 +174,8 @@ ostream& operator<<(ostream& output, Rational& r) {
 	return output;
 }
 
-istream& operator>>(istream& input, Rational& r) {
+istream &operator>>(istream &input, Rational &r)
+{
 	char separator;
 	input >> r.numerator >> separator >> r.denominator;
 	r.shorten();
@@ -177,7 +193,8 @@ int main()
 
 		while (true)
 		{
-			if (numerator % denomirator == 0) break;
+			if (numerator % denomirator == 0)
+				break;
 
 			numbers.push_back(numerator / denomirator);
 
@@ -194,7 +211,8 @@ int main()
 		{
 			cout << numbers[i];
 
-			if (i + 1 != numbers.size()) cout << ",";
+			if (i + 1 != numbers.size())
+				cout << ",";
 		}
 
 		cout << "]" << endl;
