@@ -10,13 +10,13 @@ class Node
 public:
 	bool used = false;
 	char value = 0;
-	vector<Node*> parents;
-	vector<Node*> children;
+	vector<Node *> parents;
+	vector<Node *> children;
 
-	static bool Compare(const Node* n1, const Node* n2);
+	static bool Compare(const Node *n1, const Node *n2);
 };
 
-bool Node::Compare(const Node* n1, const Node* n2)
+bool Node::Compare(const Node *n1, const Node *n2)
 {
 	return n1->value < n2->value;
 }
@@ -30,12 +30,12 @@ public:
 	void Solve();
 
 private:
-	vector<Node*> parentless;
+	vector<Node *> parentless;
 
 	Graph Clone();
 	int FindInNodes(char x);
-	int FindInVector(vector<Node*>& n, char x);
-	bool IsParentless(vector<Node*>& parents);
+	int FindInVector(vector<Node *> &n, char x);
+	bool IsParentless(vector<Node *> &parents);
 	void SolveRecursively(string order);
 	void ReloadParentless();
 };
@@ -89,8 +89,7 @@ void Graph::SolveRecursively(string order)
 			g.parentless[j]->used = true;
 
 			g.ReloadParentless();
-			g.SolveRecursively(order + value
-			);
+			g.SolveRecursively(order + value);
 		}
 	}
 }
@@ -98,15 +97,17 @@ void Graph::SolveRecursively(string order)
 int Graph::FindInNodes(char x)
 {
 	for (unsigned int i = 0; i < nodes.size(); i++)
-		if (nodes[i].value == x) return i;
+		if (nodes[i].value == x)
+			return i;
 
 	return -1;
 }
 
-int Graph::FindInVector(vector<Node*>& n, char x)
+int Graph::FindInVector(vector<Node *> &n, char x)
 {
 	for (unsigned int i = 0; i < n.size(); i++)
-		if (n[i]->value == x) return i;
+		if (n[i]->value == x)
+			return i;
 
 	return -1;
 }
@@ -114,16 +115,19 @@ int Graph::FindInVector(vector<Node*>& n, char x)
 void Graph::AddEdge(char a, char b)
 {
 	int first = FindInNodes(a), second = FindInNodes(b);
-	Node* nfirst = &nodes[first], * nsecond = &nodes[second];
+	Node *nfirst = &nodes[first], *nsecond = &nodes[second];
 
-	if (FindInVector(nfirst->children, nsecond->value) == -1) nfirst->children.push_back(nsecond);
-	if (FindInVector(nsecond->parents, nfirst->value) == -1) nsecond->parents.push_back(nfirst);
+	if (FindInVector(nfirst->children, nsecond->value) == -1)
+		nfirst->children.push_back(nsecond);
+	if (FindInVector(nsecond->parents, nfirst->value) == -1)
+		nsecond->parents.push_back(nfirst);
 }
 
-bool Graph::IsParentless(vector<Node*>& parents)
+bool Graph::IsParentless(vector<Node *> &parents)
 {
 	for (unsigned int i = 0; i < parents.size(); i++)
-		if (parents[i]->used == false) return false;
+		if (parents[i]->used == false)
+			return false;
 
 	return true;
 }
@@ -174,8 +178,10 @@ int main()
 		while (ss >> first >> second)
 			graph.AddEdge(first, second);
 
-		if (firstinput) firstinput = false;
-		else cout << endl;
+		if (firstinput)
+			firstinput = false;
+		else
+			cout << endl;
 
 		graph.Solve();
 	}

@@ -44,7 +44,7 @@ int Char2Int(char x)
 	return -1;
 }
 
-int String2Int(char* tab)
+int String2Int(char *tab)
 {
 	int len = strlen(tab), i, j, sum = 0;
 

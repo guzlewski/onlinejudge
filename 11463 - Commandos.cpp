@@ -12,7 +12,7 @@ int main()
 		int n, r;
 		std::cin >> n >> r;
 
-		int* tab = new int[n * n];
+		int *tab = new int[n * n];
 
 		for (int i = 0; i < n; i++)
 		{

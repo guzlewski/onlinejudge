@@ -7,7 +7,7 @@ int main()
 
 	while (scanf("%d %d", &players, &matches) != EOF)
 	{
-		int* tab = (int*)malloc(players * sizeof(int));
+		int *tab = (int *)malloc(players * sizeof(int));
 
 		for (j = 0; j < players; j++)
 			tab[j] = 0;

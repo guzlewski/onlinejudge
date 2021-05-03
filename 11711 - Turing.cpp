@@ -14,12 +14,11 @@ enum class status
 class turing_machine
 {
 private:
-
 	class rule
 	{
 	public:
 		int state;
-		int letter;	
+		int letter;
 		int nextState;
 		int nextLetter;
 		int head_move;
@@ -36,13 +35,13 @@ private:
 		~rule() {}
 	};
 
-	int* tape;
+	int *tape;
 	int tapeSize, head;
 	std::vector<rule> rules;
 
-	rule* find_rule(int state, int letter)
+	rule *find_rule(int state, int letter)
 	{
-		for (auto& rule : rules)
+		for (auto &rule : rules)
 		{
 			if (rule.state == state && rule.letter == letter)
 			{
@@ -71,11 +70,10 @@ private:
 	}
 
 public:
-
 	turing_machine(int _tapeSize)
 	{
 		tape = new int[_tapeSize];
-		tapeSize = _tapeSize;		
+		tapeSize = _tapeSize;
 		head = 0;
 	}
 
@@ -99,7 +97,7 @@ public:
 			tape[i] = 1;
 		}
 
-		rule* current = find_rule(0, tape[head]);
+		rule *current = find_rule(0, tape[head]);
 
 		for (int i = 0; i < 10000; i++)
 		{

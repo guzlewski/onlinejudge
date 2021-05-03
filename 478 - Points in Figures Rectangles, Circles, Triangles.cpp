@@ -23,7 +23,7 @@ struct Point
 		y = _y;
 	}
 
-	bool operator< (const Point& p) const
+	bool operator<(const Point &p) const
 	{
 		if (x != p.x)
 		{
@@ -37,14 +37,14 @@ struct Point
 class Figure
 {
 public:
-	virtual void Check(Point& p, bool& result) = 0;
+	virtual void Check(Point &p, bool &result) = 0;
 };
 
 class Rectangle : public Figure
 {
 public:
 	Rectangle(string line);
-	void Check(Point& p, bool& result);
+	void Check(Point &p, bool &result);
 
 private:
 	Point p1;
@@ -55,7 +55,7 @@ class Triangle : public Figure
 {
 public:
 	Triangle(string line);
-	void Check(Point& p, bool& result);
+	void Check(Point &p, bool &result);
 
 private:
 	Point p1;
@@ -68,7 +68,7 @@ class Circle : public Figure
 {
 public:
 	Circle(string line);
-	void Check(Point& p, bool& result);
+	void Check(Point &p, bool &result);
 
 	Point p;
 	double r;
@@ -87,7 +87,7 @@ Rectangle::Rectangle(string line)
 	p2 = Point(x2, y2);
 }
 
-void Rectangle::Check(Point& p, bool& result)
+void Rectangle::Check(Point &p, bool &result)
 {
 	if (p2 < p1)
 	{
@@ -123,7 +123,7 @@ Triangle::Triangle(string line)
 	sort(points.begin(), points.end());
 }
 
-void Triangle::Check(Point& p, bool& result)
+void Triangle::Check(Point &p, bool &result)
 {
 	bool in = 0;
 	int n = 3;
@@ -155,7 +155,7 @@ Circle::Circle(string line)
 	r = _r;
 }
 
-void Circle::Check(Point& p, bool& result)
+void Circle::Check(Point &p, bool &result)
 {
 	if ((pow(p.x - this->p.x, 2) + pow(p.y - this->p.y, 2)) < r * r)
 	{
@@ -169,7 +169,7 @@ void Circle::Check(Point& p, bool& result)
 int main()
 {
 	vector<Point> points;
-	vector<Figure*> figures;
+	vector<Figure *> figures;
 
 	int mode = 1;
 	string line;
@@ -188,19 +188,19 @@ int main()
 			{
 			case 'r':
 			{
-				Figure* r = new  Rectangle(line);
+				Figure *r = new Rectangle(line);
 				figures.push_back(r);
 			}
 			break;
 			case 't':
 			{
-				Figure* t = new Triangle(line);
+				Figure *t = new Triangle(line);
 				figures.push_back(t);
 			}
 			break;
 			case 'c':
 			{
-				Figure* c = new Circle(line);
+				Figure *c = new Circle(line);
 				figures.push_back(c);
 			}
 			break;

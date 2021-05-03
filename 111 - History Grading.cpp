@@ -8,8 +8,10 @@ int tab[21][21];
 
 int lcs(int i, int j)
 {
-	if (i == 0 || j == 0) return 0;
-	if (tab[i][j] != -1) return tab[i][j];
+	if (i == 0 || j == 0)
+		return 0;
+	if (tab[i][j] != -1)
+		return tab[i][j];
 	if (good[i] == c[j])
 	{
 		tab[i][j] = 1 + lcs(i - 1, j - 1);

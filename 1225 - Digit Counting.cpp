@@ -10,7 +10,7 @@ int main()
 		int number;
 		std::cin >> number;
 
-		int tab[10] = { 0 };
+		int tab[10] = {0};
 
 		for (int i = 1; i <= number; i++)
 		{

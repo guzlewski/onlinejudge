@@ -2,7 +2,7 @@
 
 using namespace std;
 
-string tab[] = { " ", ".,?\"", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+string tab[] = {" ", ".,?\"", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
 int main()
 {

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int FindSlump(char* tab, int index)
+int FindSlump(char *tab, int index)
 {
 	int dl = strlen(tab), i = index;
 
@@ -24,7 +24,7 @@ int FindSlump(char* tab, int index)
 	return -1;
 }
 
-int FindSlimp(char* tab, int index)
+int FindSlimp(char *tab, int index)
 {
 	int dl = strlen(tab), i = index, end;
 
@@ -59,7 +59,7 @@ int FindSlimp(char* tab, int index)
 	return -1;
 }
 
-int IsSlurpy(char* tab)
+int IsSlurpy(char *tab)
 {
 	int x = FindSlimp(tab, 0);
 

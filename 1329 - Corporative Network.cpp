@@ -2,7 +2,7 @@
 #include <string>
 #include <cmath>
 
-int findset(int* parent, int* value, int x)
+int findset(int *parent, int *value, int x)
 {
 	if (x == parent[x])
 	{
@@ -26,8 +26,8 @@ int main()
 		int n;
 		std::cin >> n;
 
-		int* parent = new int[n + 1];
-		int* value = new int[n + 1];
+		int *parent = new int[n + 1];
+		int *value = new int[n + 1];
 
 		for (int i = 1; i < n + 1; i++)
 		{

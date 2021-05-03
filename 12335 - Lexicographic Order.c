@@ -8,15 +8,18 @@ long long powers[20];
 
 void Process(int cur, long long dir)
 {
-	if (cur == len) return;
+	if (cur == len)
+		return;
 
 	int i;
 	long long temp = powers[len - cur - 1];
 
 	for (i = 0; i < len; i++)
 	{
-		if (vis[i]) continue;
-		if (dir > temp) dir -= temp;
+		if (vis[i])
+			continue;
+		if (dir > temp)
+			dir -= temp;
 		else
 		{
 			vis[i] = 1;

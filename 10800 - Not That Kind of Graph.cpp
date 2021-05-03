@@ -23,17 +23,20 @@ int main()
 		{
 			if (data[i] == 'R')
 			{
-				if (i > 0 && data[i - 1] == 'R') index--;
+				if (i > 0 && data[i - 1] == 'R')
+					index--;
 				tab[index][i] = '/';
 			}
 			else if (data[i] == 'F')
 			{
-				if (i > 0 && (data[i - 1] == 'F' || data[i - 1] == 'C')) index++;
+				if (i > 0 && (data[i - 1] == 'F' || data[i - 1] == 'C'))
+					index++;
 				tab[index][i] = '\\';
 			}
 			else
 			{
-				if (i > 0 && data[i - 1] == 'R') index--;
+				if (i > 0 && data[i - 1] == 'R')
+					index--;
 				tab[index][i] = '_';
 			}
 		}
@@ -42,7 +45,8 @@ int main()
 		{
 			int d = 0;
 			for (int j = 0; j < 60; j++)
-				if (tab[i][j] != ' ') d = j + 1;
+				if (tab[i][j] != ' ')
+					d = j + 1;
 			tab[i][d] = '\0';
 		}
 
@@ -50,13 +54,15 @@ int main()
 
 		for (int i = 0; i < 110; i++)
 		{
-			if (tab[i][0] == '\0') continue;
+			if (tab[i][0] == '\0')
+				continue;
 
 			cout << "| ";
 
 			for (int j = 0; j < 60; j++)
 			{
-				if (tab[i][j] == '\0') break;
+				if (tab[i][j] == '\0')
+					break;
 				cout << tab[i][j];
 			}
 			cout << endl;

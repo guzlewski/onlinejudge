@@ -5,7 +5,7 @@ using namespace std;
 
 int oil = 0;
 
-void Check(vector<vector<char> >& fields, int m, int n, int add)
+void Check(vector<vector<char>> &fields, int m, int n, int add)
 {
 	if (m < 0 || m >= (int)fields.size() || n < 0 || n >= (int)fields[0].size() || fields[m][n] != '@')
 	{
@@ -43,7 +43,7 @@ int main()
 			break;
 		}
 
-		vector<vector<char> > fields(m);
+		vector<vector<char>> fields(m);
 
 		for (int i = 0; i < m; i++)
 		{

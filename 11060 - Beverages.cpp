@@ -15,7 +15,7 @@ struct Drink
 	}
 };
 
-Drink* Find(vector<Drink>& drinks, string name)
+Drink *Find(vector<Drink> &drinks, string name)
 {
 	for (unsigned int i = 0; i < drinks.size(); i++)
 	{
@@ -91,8 +91,8 @@ int main()
 			good++;
 		}
 
-		cout << "." << endl << endl;
-
+		cout << "." << endl
+			 << endl;
 	}
 
 	return 0;

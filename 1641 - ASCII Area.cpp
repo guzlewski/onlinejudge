@@ -21,7 +21,7 @@ int main()
 				{
 					area++;
 				}
-				else if(line[i] != '.')
+				else if (line[i] != '.')
 				{
 					if (inside)
 					{

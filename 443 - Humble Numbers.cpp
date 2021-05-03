@@ -6,7 +6,7 @@
 #define MAX 2000000000
 #define PRECISION 31
 
-void generate(std::vector<int>& humble)
+void generate(std::vector<int> &humble)
 {
 	for (int i = 0; i < PRECISION; i++)
 	{

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <bitset>
 
-#define SIZE 1000000 
+#define SIZE 1000000
 
-bool isEmirp(std::bitset<SIZE>& primes, int n)
+bool isEmirp(std::bitset<SIZE> &primes, int n)
 {
 	int reversed = 0, temp = n;
 	while (temp != 0)
@@ -15,7 +15,7 @@ bool isEmirp(std::bitset<SIZE>& primes, int n)
 	return (reversed != n) && primes[reversed];
 }
 
-void init(std::bitset<SIZE>& primes)
+void init(std::bitset<SIZE> &primes)
 {
 	primes.set();
 	primes[0] = false;

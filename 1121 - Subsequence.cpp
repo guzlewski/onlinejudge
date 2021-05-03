@@ -8,7 +8,7 @@ int main()
 	while (std::cin >> n >> s)
 	{
 		int min = 0, start = 0;
-		int* tab = new int[n]();
+		int *tab = new int[n]();
 
 		for (int i = 0; i < n; i++)
 		{
